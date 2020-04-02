@@ -23,6 +23,12 @@
         - rhel-7-server-extras-rpms
         - rhel-7-server-optional-rpms
 
+  - name: Open Firewalld for apache
+    firewalld:
+      service: http
+      permanent: yes
+      state: enabled
+
   - name: Add apache
     yum:
       name: httpd
